@@ -114,9 +114,9 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     
     //背景透明黑色
-    UIView *blackBg=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
-    blackBg.backgroundColor = [UIColor blackColor];
-    [self.view insertSubview:blackBg belowSubview:aTableView];
+//    UIView *blackBg=[[UIView alloc]initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
+//    blackBg.backgroundColor = [UIColor blackColor];
+//    [self.view insertSubview:blackBg belowSubview:aTableView];
     
     UIButton *setimageButton = [UIButton buttonWithType:UIButtonTypeCustom];
     setimageButton.frame = CGRectMake(0, 0, 320, 20);
@@ -166,9 +166,9 @@
     
     NSInteger count = [_headerData count];
     //設置ScrollView0
-    headerScrollview.frame = CGRectMake(38, 5, 195, 150);
+//    headerScrollview.frame = CGRectMake(38, 104, 195, 100);
     [headerScrollview sizeToFit];
-    self.headerScrollview.contentSize = CGSizeMake( 195 * count, 150);
+    self.headerScrollview.contentSize = CGSizeMake( 195 * count, 0);
     headerScrollview.showsHorizontalScrollIndicator = NO;
     headerScrollview.showsVerticalScrollIndicator = NO;
     headerScrollview.backgroundColor = [UIColor clearColor];
@@ -178,6 +178,8 @@
     headerScrollview.clipsToBounds = NO;
     headerScrollview.pagingEnabled = YES;
     
+    
+    [self.view addSubview:headerScrollview];
     //設定PageControl
 //    self.pageControl.numberOfPages = count;
 //    self.pageControl.currentPage = 0;
@@ -196,7 +198,7 @@
         //圖片
         UIImageView *imageView = [[UIImageView alloc]init];
         imageView.userInteractionEnabled = YES;
-        imageView.frame = CGRectMake(195 * i + 75, 40, 100 , 100);
+        imageView.frame = CGRectMake(195 * i + 75, -50, 100 , 100);
         imageView.tag = i;
         imageView.contentMode = UIViewContentModeScaleAspectFill;
 //        imageView.clipsToBounds = YES;
